@@ -1,6 +1,7 @@
 {
   "devDependencies": {
-    "cypress": "^13.3.2"
+    "cypress": "^13.3.2",
+    "prettier": "3.0.3"
   },
   "name": "cypress_ci_boilerplate",
   "version": "1.0.0",
@@ -179,7 +180,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Miguel Correa",
   "license": "ISC",
   "description": ""
 }
