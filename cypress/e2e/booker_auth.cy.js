@@ -1,4 +1,3 @@
-// TODO: Change this to a command, use before each to authenticate on other tests
 describe('Authenticate to RESTful booker app', () => {
   it('Makes a post request and receives a token', () => {
     cy.fixture('credentials.json').then((credentials) => {

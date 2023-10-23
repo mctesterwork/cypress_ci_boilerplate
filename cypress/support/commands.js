@@ -23,3 +23,16 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add('loginApi', () => {
+    cy.fixture('credentials.json').then((credentials) => {
+        cy.request('POST', '/auth', {
+          username: credentials.username,
+          password: credentials.password
+        }).then((response) => {
+          expect(response.status).to.equal(200)
+          expect(response.body).to.have.property('token')
+          Cypress.env('token', response.body['token'])
+          // TODO: Save the token to a JSON file under fixtures
+        })
+      })
+})
