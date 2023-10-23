@@ -1,0 +1,100 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-10-23T15:32:44.824Z",
+    "end": "2023-10-23T15:32:46.181Z",
+    "duration": 1357,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "bd6e7a8f-e482-4be4-a512-2c628f81e2c4",
+      "title": "",
+      "fullFile": "cypress/e2e/booker_auth.cy.js",
+      "file": "cypress/e2e/booker_auth.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c49adf10-80ba-4705-b922-a7d8f294b46e",
+          "title": "Authenticate to RESTful booker app",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Makes a post request and receives a token",
+              "fullTitle": "Authenticate to RESTful booker app Makes a post request and receives a token",
+              "timedOut": null,
+              "duration": 1265,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('credentials.json').then(credentials => {\n  cy.request('POST', 'https://restful-booker.herokuapp.com/auth', {\n    username: credentials.username,\n    password: credentials.password\n  }).then(response => {\n    expect(response.status).to.equal(200);\n    expect(response.body).to.have.property('token');\n    // TODO: Save the token to a JSON file under fixtures\n  });\n});",
+              "err": {},
+              "uuid": "70270840-da67-4794-9523-e615b44ff612",
+              "parentUUID": "c49adf10-80ba-4705-b922-a7d8f294b46e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "70270840-da67-4794-9523-e615b44ff612"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1265,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
