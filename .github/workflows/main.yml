@@ -9,3 +9,14 @@ jobs:
       - uses: cypress-io/github-action@v6
         with:
           browser: chrome
+  build:
+    name: Run k6 test
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Run k6 local test
+        uses: grafana/k6-action@v0.3.0
+        with:
+          filename: performance/test.js
+          flags: --vus 50 --duration 10s

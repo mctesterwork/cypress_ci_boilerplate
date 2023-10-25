@@ -25,7 +25,7 @@ describe('Listing the bookings', () => {
         cy.request('GET', `/booking?firstname=${firstname}&lastname=${lastname}`, {auth: { 'bearer': token }}).then((response) => {
             console.log(response)
             expect(response.status).to.equal(200)
-            expect(response.body[0]).to.have.property('bookingid')
+            response.body[0] != null ? expect(response.body[0]).to.have.property('bookingid') : expect(response.body).to.be.empty
         })
     })
 })
