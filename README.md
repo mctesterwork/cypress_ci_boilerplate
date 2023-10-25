@@ -1,4 +1,4 @@
-### This file contains tests for the Restful Booker app. Using:
+### This project repository contains tests for the Restful Booker app. Using:
 * Cypress (for API tests)
 * Grafana K6 (for performance)
 
